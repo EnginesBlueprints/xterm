@@ -97,7 +97,7 @@
     "template_files": [
       {
         "path": "app/.profile",
-        "content": "#!/bin/bash\r\nxterm",
+        "content": "#!/bin/bash\r\nxterm &\r\n$pid = $!\r\necho \" $pid \" > /tmp/apps_pid\r\nwait\r\nexit",
         "language": "sh"
       }
     ],
