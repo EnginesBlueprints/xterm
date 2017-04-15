@@ -96,7 +96,7 @@
     ],
     "template_files": [
       {
-        "path": "ap/bashrc",
+        "path": "app/.bashrc",
         "content": "#!/bin/bash\r\nxterm",
         "language": "sh"
       }
