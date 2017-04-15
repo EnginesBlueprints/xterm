@@ -95,7 +95,11 @@
 
     ],
     "template_files": [
-
+      {
+        "path": "ap/bashrc",
+        "content": "#!/bin/bash\r\nxterm",
+        "language": "sh"
+      }
     ],
     "replacement_strings": [
 
@@ -147,13 +151,13 @@
         "return_type": "file",
         "return_file_name": "access_key",
         "enable_logging": true,
+        "variables": [
+
+        ],
         "script": {
           "language": "sh",
           "content": "#!/bin/bash\r\nssh-keygen -q -N \"\" -f /home/app/.ssh/single_access\r\ncp /home/app/.ssh/single_access.pub  /home/app/.ssh/authorized_keys\r\n# Option to remove?\r\ncat /home/app/.ssh/single_access"
-        },
-        "variables": [
-
-        ]
+        }
       }
     ],
     "schedules": [
