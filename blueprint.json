@@ -1,0 +1,163 @@
+{
+  "schema": {
+    "type": "app_blueprint",
+    "version": {
+      "major": 1,
+      "minor": 0
+    },
+    "origin": "Engines Developer Studio 0.2"
+  },
+  "metadata": {
+    "blueprint": {
+      "version": {
+        "major": 0,
+        "minor": 0,
+        "level": "alpha",
+        "patch": 0
+      },
+      "timestamp": null
+    },
+    "software": {
+      "display": {
+        "title": "xterm",
+        "label": "xterm",
+        "version": "",
+        "description": "",
+        "url": ""
+      },
+      "license": {
+        "label": "",
+        "url": ""
+      }
+    }
+  },
+  "software": {
+    "base": {
+      "name": "xterm",
+      "framework": "x11",
+      "memory": {
+        "required": 256,
+        "recommended": 300
+      },
+      "http_protocol": "http_only",
+      "framework_port_override": "",
+      "deployment_type": "worker",
+      "web_root_directory": "",
+      "continuous_deployment": false,
+      "install_form_comment": "",
+      "first_run_url": "",
+      "installation_report": ""
+    },
+    "ports": [
+      {
+        "port": 2222,
+        "external": 2223,
+        "protocol": "tcp"
+      }
+    ],
+    "scripts": {
+      "start": {
+        "language": "sh",
+        "content": ""
+      },
+      "install": {
+        "language": "sh",
+        "content": ""
+      },
+      "post_install": {
+        "language": "sh",
+        "content": ""
+      },
+      "shutdown": {
+        "language": "sh",
+        "content": ""
+      }
+    },
+    "external_repositories": [
+
+    ],
+    "system_packages": [
+      {
+        "package": "xterm",
+        "version": ""
+      }
+    ],
+    "installed_packages": [
+
+    ],
+    "required_modules": [
+
+    ],
+    "service_configurations": [
+
+    ],
+    "environment_variables": [
+
+    ],
+    "template_files": [
+
+    ],
+    "replacement_strings": [
+
+    ],
+    "database_seed": {
+      "language": "text",
+      "content": "",
+      "script": false
+    },
+    "file_write_permissions": [
+
+    ],
+    "persistent_directories": [
+
+    ],
+    "persistent_files": [
+
+    ],
+    "components": {
+      "path": "",
+      "extract": false,
+      "sources": [
+
+      ]
+    },
+    "workers": {
+      "blocking": "",
+      "commands": [
+
+      ]
+    },
+    "rake_tasks": [
+
+    ],
+    "custom_php_inis": [
+
+    ],
+    "apache_htaccess_files": [
+
+    ],
+    "apache_httpd_configurations": [
+
+    ],
+    "actionators": [
+      {
+        "name": "create_single_access_key",
+        "label": "Create Single Access key",
+        "description": "",
+        "return_type": "file",
+        "return_file_name": "access_key",
+        "enable_logging": true,
+        "script": {
+          "language": "sh",
+          "content": "#!/bin/bash\r\nssh-keygen -q -N \"\" -f /home/app/.ssh/single_access\r\ncp /home/app/.ssh/single_access.pub  /home/app/.ssh/authorized_keys\r\n# Option to remove?\r\ncat /home/app/.ssh/single_access"
+        },
+        "variables": [
+
+        ]
+      }
+    ],
+    "schedules": [
+
+    ]
+  }
+}
