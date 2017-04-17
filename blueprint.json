@@ -93,7 +93,7 @@
     ],
     "environment_variables": [
       {
-        "name": "command",
+        "name": "X11COMMAND",
         "value": "xerm",
         "mandatory": false,
         "ask_at_build_time": false,
