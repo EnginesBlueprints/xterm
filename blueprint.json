@@ -36,8 +36,8 @@
       "name": "xterm",
       "framework": "x11",
       "memory": {
-        "required": "512",
-        "recommended": "677"
+        "required": 512,
+        "recommended": 677
       },
       "http_protocol": "http_only",
       "framework_port_override": "",
@@ -89,7 +89,18 @@
 
     ],
     "service_configurations": [
-
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "filesystem/local/filesystem",
+        "variables": {
+          "service_name": "_Engines_Builder(engine_name)",
+          "volume_src": "",
+          "engine_path": "/home/app ",
+          "permissions": "rw",
+          "user": "_Engines_Builder(data_uid)",
+          "group": "_Engines_Builder(data_gid)"
+        }
+      }
     ],
     "environment_variables": [
       {
