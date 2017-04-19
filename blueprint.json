@@ -36,8 +36,8 @@
       "name": "xterm",
       "framework": "x11",
       "memory": {
-        "required": 256,
-        "recommended": 300
+        "required": "512",
+        "recommended": "677"
       },
       "http_protocol": "http_only",
       "framework_port_override": "",
@@ -78,7 +78,7 @@
     ],
     "system_packages": [
       {
-        "package": "xterm",
+        "package": "libreoffice",
         "version": ""
       }
     ],
@@ -171,34 +171,34 @@
         "return_type": "file",
         "return_file_name": "access_key",
         "enable_logging": true,
-        "script": {
-          "language": "sh",
-          "content": "#!/bin/bash\r\nif test -z $overwrite_existing\r\n then\r\n  overwrite_existing=true\r\n fi\r\n if test $overwrite_existing == true\r\n  then\r\n    rm /home/app/.ssh/single_access /home/app/.ssh/single_access.pub /home/app/.ssh/authorized_keys\r\n  fi\r\n  \r\n  if ! test -f  /home/app/.ssh/single_access\r\n   then\r\n    ssh-keygen -q -N \"\" -f /home/app/.ssh/single_access\r\n    cp /home/app/.ssh/single_access.pub  /home/app/.ssh/authorized_keys\r\n# Option to remove?\r\n   fi\r\ncat /home/app/.ssh/single_access"
-        },
         "variables": [
           {
             "name": "overwrite_existing",
             "value": "true",
             "mandatory": false,
             "input": {
-              "label": "",
               "type": "boolean",
+              "label": "",
               "title": "",
               "comment": "",
               "hint": "",
               "placeholder": "",
-              "collection": {
-                "items": {
-                },
-                "include_blank": false
-              },
               "validation": {
                 "pattern": "",
                 "message": ""
+              },
+              "collection": {
+                "include_blank": false,
+                "items": {
+                }
               }
             }
           }
-        ]
+        ],
+        "script": {
+          "language": "sh",
+          "content": "#!/bin/bash\r\nif test -z $overwrite_existing\r\n then\r\n  overwrite_existing=true\r\n fi\r\n if test $overwrite_existing == true\r\n  then\r\n    rm /home/app/.ssh/single_access /home/app/.ssh/single_access.pub /home/app/.ssh/authorized_keys\r\n  fi\r\n  \r\n  if ! test -f  /home/app/.ssh/single_access\r\n   then\r\n    ssh-keygen -q -N \"\" -f /home/app/.ssh/single_access\r\n    cp /home/app/.ssh/single_access.pub  /home/app/.ssh/authorized_keys\r\n# Option to remove?\r\n   fi\r\ncat /home/app/.ssh/single_access"
+        }
       }
     ],
     "schedules": [
