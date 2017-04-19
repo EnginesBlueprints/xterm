@@ -78,7 +78,7 @@
     ],
     "system_packages": [
       {
-        "package": "libreoffice",
+        "package": "xterm",
         "version": ""
       }
     ],
