@@ -50,8 +50,8 @@
     },
     "ports": [
       {
-        "port": "2222",
-        "external": "0",
+        "port": 2222,
+        "external": 0,
         "protocol": "tcp"
       }
     ],
@@ -95,7 +95,7 @@
         "variables": {
           "service_name": "_Engines_Builder(engine_name)",
           "volume_src": "",
-          "engine_path": "/home/app ",
+          "engine_path": "/home/app",
           "permissions": "rw",
           "user": "_Engines_Builder(data_uid)",
           "group": "_Engines_Builder(data_gid)"
