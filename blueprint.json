@@ -50,8 +50,8 @@
     },
     "ports": [
       {
-        "port": 2222,
-        "external": 2223,
+        "port": "2222",
+        "external": "0",
         "protocol": "tcp"
       }
     ],
@@ -107,24 +107,24 @@
         "name": "X11COMMAND",
         "value": "xterm",
         "mandatory": false,
+        "immutable": true,
         "ask_at_build_time": false,
         "build_time_only": false,
-        "immutable": true,
         "input": {
-          "label": "",
           "type": "string",
+          "label": "",
           "title": "",
           "comment": "",
           "hint": "",
           "placeholder": "",
-          "collection": {
-            "items": {
-            },
-            "include_blank": false
-          },
           "validation": {
             "pattern": "",
             "message": ""
+          },
+          "collection": {
+            "include_blank": false,
+            "items": {
+            }
           }
         }
       }
